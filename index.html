@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Globule - Country Guessing Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="start-screen">
+            <h1>Globule</h1>
+            <div class="mode-select">
+                <button class="mode-btn" id="normal-mode">Normal Mode</button>
+                <button class="mode-btn" id="hard-mode">Hard Mode</button>
+            </div>
+        </div>
+
+        <div class="game-screen hidden">
+            <div class="info-panel">
+                <div class="game-info">
+                    <h2 id="target-country">Find: ?</h2>
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="stat-label">Time:</span>
+                            <span class="stat-value" id="timer">00:00</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Score:</span>
+                            <span class="stat-value" id="score">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Distance:</span>
+                            <span class="stat-value" id="distance">- km</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="globe-container">
+                <svg id="globe" viewBox="0 0 800 800"></svg>
+            </div>
+
+            <div class="facts-panel">
+                <button class="facts-toggle" id="facts-toggle">Show Facts</button>
+                <div class="facts-content hidden" id="facts-content">
+                    <div class="flag-container" id="flag-container"></div>
+                    <div class="country-facts" id="country-facts"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="correct-sound" src="sounds/correct.mp3"></audio>
+    <audio id="wrong-sound" src="sounds/wrong.mp3"></audio>
+    <audio id="click-sound" src="sounds/click.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html> 

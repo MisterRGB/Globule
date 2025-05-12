@@ -1,0 +1,211 @@
+/* styles.css */
+:root {
+    --primary-color: #6750A4;
+    --on-primary: #FFFFFF;
+    --primary-container: #EADDFF;
+    --on-primary-container: #21005D;
+    --secondary-color: #625B71;
+    --on-secondary: #FFFFFF;
+    --secondary-container: #E8DEF8;
+    --on-secondary-container: #1D192B;
+    --tertiary-color: #7D5260;
+    --on-tertiary: #FFFFFF;
+    --tertiary-container: #FFD8E4;
+    --on-tertiary-container: #31111D;
+    --error-color: #B3261E;
+    --on-error: #FFFFFF;
+    --error-container: #F9DEDC;
+    --on-error-container: #410E0B;
+    --background: #FFFBFE;
+    --on-background: #1C1B1F;
+    --surface: #FFFBFE;
+    --on-surface: #1C1B1F;
+    --surface-variant: #E7E0EC;
+    --on-surface-variant: #49454F;
+    --outline: #79747E;
+    --shadow: #000000;
+    --correct: #4CAF50;
+    --close: #FFC107;
+    --medium: #FF9800;
+    --far: #F44336;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    color: var(--on-background);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    position: relative;
+}
+
+.start-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 2rem;
+}
+
+.start-screen h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.mode-select {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.mode-btn {
+    padding: 1rem 2rem;
+    border-radius: 1.5rem;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#normal-mode {
+    background-color: var(--primary-color);
+    color: var(--on-primary);
+}
+
+#hard-mode {
+    background-color: var(--secondary-container);
+    color: var(--on-secondary-container);
+}
+
+.mode-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.game-screen {
+    display: grid;
+    grid-template-columns: 300px 1fr 300px;
+    height: 100%;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.info-panel {
+    background-color: var(--surface);
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.globe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#globe {
+    width: 100%;
+    height: 100%;
+    cursor: grab;
+}
+
+.facts-panel {
+    background-color: var(--surface);
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.facts-toggle {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--on-primary);
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.facts-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.flag-container {
+    width: 100%;
+    aspect-ratio: 3/2;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 0.5rem;
+    background-color: var(--surface-variant);
+}
+
+.country-facts {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-label {
+    font-weight: 500;
+    color: var(--on-surface-variant);
+}
+
+.stat-value {
+    font-weight: 700;
+    color: var(--on-surface);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .game-screen {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+    }
+
+    .facts-panel {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 1rem 1rem 0 0;
+    }
+
+    .facts-content {
+        max-height: 50vh;
+        overflow-y: auto;
+    }
+}
